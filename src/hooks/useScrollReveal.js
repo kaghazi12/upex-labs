@@ -7,7 +7,8 @@ export const useScrollReveal = () => {
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            e.target.classList.add('active');
+            e.target.classList.remove('opacity-0');
+            e.target.classList.add('animate-fade-in');
             revealObs.unobserve(e.target);
           }
         });

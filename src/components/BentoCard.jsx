@@ -39,7 +39,7 @@ export const BentoCard = ({
     <div 
       ref={cardRef}
       className={cn(
-        "glass-card bento-card-hover reveal flex flex-col justify-between cursor-default min-h-[220px] md:min-h-[250px] relative overflow-hidden group",
+        "bg-card border border-border card-hover reveal flex flex-col justify-between cursor-default min-h-[220px] md:min-h-[250px] relative overflow-hidden group rounded-[20px] p-10 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]",
         colSpan2 ? "md:col-span-2 w-full" : "w-full",
         tall && "md:min-h-[380px]",
         className
@@ -52,7 +52,7 @@ export const BentoCard = ({
       <div 
         className="absolute inset-0 rounded-[inherit] pointer-events-none z-[1] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
-          background: `radial-gradient(circle 240px at var(--mx, 50%) var(--my, 50%), rgba(128, 44, 110, 0.16), transparent 70%)`
+          background: `radial-gradient(circle 240px at var(--mx, 50%) var(--my, 50%), hsl(var(--primary) / 0.1), transparent 70%)`
         }}
       />
       <div className="relative z-[2] h-full flex flex-col justify-between">

@@ -4,7 +4,7 @@ import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Footer, MobileStickyBar } from './components/Footer';
-import { AuroraCanvas } from './components/AuroraCanvas';
+import { CosmicBackground } from './components/CosmicBackground';
 import { HomePage } from './pages/HomePage';
 import { CheckoutPage } from './pages/CheckoutPage';
 
@@ -39,7 +39,7 @@ const App = () => {
       <PayPalScriptProvider options={initialOptions}>
         <BrowserRouter>
           <ScrollToHash />
-          <AuroraCanvas />
+          <CosmicBackground />
           <div className="relative z-10 flex flex-col min-h-screen">
             <Navbar />
             <div className="flex-grow">
