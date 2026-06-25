@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import { CheckoutForm } from './CheckoutForm';
-import { PaypalCheckout } from './PaypalCheckout';
+import { WiseCheckoutForm } from './WiseCheckoutForm';
 import { CheckCircle2 } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
-// Replace with your real publishable key
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
-
-export const PaymentSection = ({ selectedPlan = 'Growth Engine', price = '$3,500' }) => {
-  const [paymentMethod, setPaymentMethod] = useState('stripe'); // 'stripe' or 'paypal'
+export const PaymentSection = ({ selectedPlan = 'Growth Engine', setupPrice = '$3,500', retainerPrice = '$499' }) => {
   const [paymentStatus, setPaymentStatus] = useState('idle'); // 'idle', 'success'
 
   const handleSuccess = () => {
@@ -37,46 +29,21 @@ export const PaymentSection = ({ selectedPlan = 'Growth Engine', price = '$3,500
   return (
     <div className="max-w-[600px] w-full mx-auto bg-card border border-border flex flex-col p-8 md:p-10 rounded-2xl shadow-lg">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-foreground mb-2">Checkout</h2>
-        <p className="text-muted-foreground flex justify-between items-center border-b border-border pb-4">
-          <span>{selectedPlan} Plan Setup Fee</span>
-          <span className="font-semibold text-foreground text-xl">{price}</span>
-        </p>
-      </div>
-
-      <div className="flex gap-4 mb-8">
-        <button
-          onClick={() => setPaymentMethod('stripe')}
-          className={cn(
-            "flex-1 py-3 rounded-lg text-sm font-semibold transition-colors border",
-            paymentMethod === 'stripe' 
-              ? "bg-primary/20 border-primary text-primary" 
-              : "bg-transparent border-border text-muted-foreground hover:border-primary/50 hover:text-foreground"
-          )}
-        >
-          Credit Card
-        </button>
-        <button
-          onClick={() => setPaymentMethod('paypal')}
-          className={cn(
-            "flex-1 py-3 rounded-lg text-sm font-semibold transition-colors border",
-            paymentMethod === 'paypal' 
-              ? "bg-primary/20 border-primary text-primary" 
-              : "bg-transparent border-border text-muted-foreground hover:border-primary/50 hover:text-foreground"
-          )}
-        >
-          PayPal
-        </button>
+        <h2 className="text-2xl font-bold text-foreground mb-4">Checkout</h2>
+        <div className="flex flex-col gap-2 border-b border-border pb-4">
+          <div className="flex justify-between items-center text-muted-foreground">
+            <span>{selectedPlan} Plan — Setup Fee</span>
+            <span className="font-semibold text-foreground text-xl">{setupPrice}</span>
+          </div>
+          <div className="flex justify-between items-center text-muted-foreground text-sm">
+            <span>Monthly Retainer</span>
+            <span className="font-medium text-foreground">{retainerPrice}/mo</span>
+          </div>
+        </div>
       </div>
 
       <div className="min-h-[250px]">
-        {paymentMethod === 'stripe' ? (
-          <Elements stripe={stripePromise}>
-            <CheckoutForm planName={selectedPlan} price={price} onSuccessfulPayment={handleSuccess} />
-          </Elements>
-        ) : (
-          <PaypalCheckout planName={selectedPlan} price={price} onSuccessfulPayment={handleSuccess} />
-        )}
+        <WiseCheckoutForm planName={selectedPlan} price={setupPrice} onSuccessfulPayment={handleSuccess} />
       </div>
     </div>
   );

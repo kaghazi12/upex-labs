@@ -64,14 +64,8 @@ export const Navbar = () => {
           </nav>
           
           {/* Actions */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-            <Link 
-              to="/checkout" 
-              className="cosmic-button"
-            >
-              Checkout Flow
-            </Link>
             <a 
               href="#contact" 
               className="cosmic-button"
@@ -113,10 +107,7 @@ export const Navbar = () => {
           <a href="/#results" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline text-2xl font-semibold tracking-tight transition-all duration-300 hover:text-primary">Results</a>
           <a href="/#pricing" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline text-2xl font-semibold tracking-tight transition-all duration-300 hover:text-primary">Pricing</a>
           <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline text-2xl font-semibold tracking-tight transition-all duration-300 hover:text-primary">Contact</a>
-          <Link to="/checkout" onClick={() => setMobileMenuOpen(false)} className="cosmic-button mt-6 text-lg py-4 px-10 w-[80%] max-w-[300px]">
-            Checkout
-          </Link>
-          <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="cosmic-button mt-2 text-lg py-4 px-10 w-[80%] max-w-[300px]">
+          <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="cosmic-button mt-6 text-lg py-4 px-10 w-[80%] max-w-[300px]">
             Book a free call
           </a>
         </nav>

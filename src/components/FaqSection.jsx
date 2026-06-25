@@ -6,7 +6,7 @@ const FaqItem = ({ question, answer, isOpen, onClick, delay }) => {
   return (
     <div 
       className={cn(
-        "rounded-xl border transition-all duration-300 overflow-hidden reveal bg-card card-hover",
+        "rounded-xl border transition-all duration-300 overflow-hidden bg-card card-hover",
         isOpen ? "border-primary" : "border-border"
       )}
       style={{ transitionDelay: `${delay}ms` }}
@@ -32,7 +32,7 @@ const FaqItem = ({ question, answer, isOpen, onClick, delay }) => {
       
       <div 
         className={cn(
-          "overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]",
+          "overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
           isOpen ? "max-h-[500px]" : "max-h-0"
         )}
       >
