@@ -56,7 +56,6 @@ export const CosmicBackground = () => {
             height: '2px',
             animationDelay: meteor.animationDelay,
             animationDuration: meteor.animationDuration,
-            opacity: isDarkMode ? 1 : 0.4,
           }}
         />
       ))}

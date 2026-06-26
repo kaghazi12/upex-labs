@@ -96,20 +96,20 @@ export const Navbar = () => {
         mobileMenuOpen ? "right-0" : "-right-[100%]"
       )}>
         <button 
-          className="absolute top-8 right-8 text-5xl bg-transparent border-none text-foreground cursor-pointer leading-none w-11 h-11 flex items-center justify-center transition-all duration-300 hover:text-primary"
+          className="absolute top-4 right-4 text-5xl bg-transparent border-none text-foreground cursor-pointer leading-none w-11 h-11 flex items-center justify-center transition-all duration-300 hover:text-primary"
           onClick={() => setMobileMenuOpen(false)}
           aria-label="Close navigation"
         >
           &times;
         </button>
         <nav className="flex flex-col items-center gap-10 w-full">
-          <a href="/#services" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline text-2xl font-semibold tracking-tight transition-all duration-300 hover:text-primary">Services</a>
-          <a href="/#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline text-2xl font-semibold tracking-tight transition-all duration-300 hover:text-primary">How it works</a>
-          <a href="/#work" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline text-2xl font-semibold tracking-tight transition-all duration-300 hover:text-primary">Work</a>
-          <a href="/#privacy" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline text-2xl font-semibold tracking-tight transition-all duration-300 hover:text-primary">Privacy</a>
-          <a href="/#pricing" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline text-2xl font-semibold tracking-tight transition-all duration-300 hover:text-primary">Pricing</a>
-          <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline text-2xl font-semibold tracking-tight transition-all duration-300 hover:text-primary">Contact</a>
-          <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="cosmic-button mt-6 text-lg py-4 px-10 w-[80%] max-w-[300px]">
+          <a href="/#services" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">Services</a>
+          <a href="/#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">How it works</a>
+          <a href="/#work" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">Work</a>
+          <a href="/#privacy" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">Privacy</a>
+          <a href="/#pricing" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">Pricing</a>
+          <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">Contact</a>
+          <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="cosmic-button mt-6 py-4 px-10 w-[80%] max-w-[300px]">
             Book a free call
           </a>
         </nav>

@@ -8,7 +8,8 @@ export const BentoCard = ({
   colSpan2 = false, 
   tall = false, 
   delay = 0,
-  to = null
+  to = null,
+  onClick = null
 }) => {
   const cardRef = useRef(null);
   const [style, setStyle] = useState({});
@@ -41,7 +42,7 @@ export const BentoCard = ({
     "bg-card border border-border card-hover reveal flex flex-col justify-between min-h-[220px] md:min-h-[250px] relative overflow-hidden group rounded-[20px] p-10 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]",
     colSpan2 ? "md:col-span-2 w-full" : "w-full",
     tall && "md:min-h-[380px]",
-    to ? "cursor-pointer hover:border-primary hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)] transition-all duration-300" : "cursor-default",
+    (to || onClick) ? "cursor-pointer hover:border-primary hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)] transition-all duration-300" : "cursor-default",
     className
   );
 
@@ -81,6 +82,7 @@ export const BentoCard = ({
       style={{ transitionDelay: `${delay}ms`, ...style }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onClick={onClick}
     >
       {content}
     </div>

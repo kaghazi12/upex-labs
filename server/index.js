@@ -1,11 +1,18 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import wiseRoutes from './routes/wise.js';
 import questionnaireRoutes from './routes/questionnaire.js';
+import chatRoutes from './routes/chat.js';
 import connectDB from './config/db.js';
 
-dotenv.config();
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 // Connect to MongoDB
 connectDB();
@@ -20,6 +27,7 @@ app.use(express.json({ limit: '10mb' }));
 // Routes
 app.use('/api/wise', wiseRoutes);
 app.use('/api/questionnaire', questionnaireRoutes);
+app.use('/api/chat', chatRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

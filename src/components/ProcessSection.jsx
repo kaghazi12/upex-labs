@@ -1,20 +1,44 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const steps = [
   {
-    title: "Discovery Call",
-    desc: "30 minutes. No fluff. We learn your business, your gaps, and what a real result looks like for you.",
-    points: ["Business analysis", "Gap identification", "Goal setting"]
+    title: "Choose Your Plan",
+    desc: "Explore our three plans and pick the one that fits your business goals. Not sure which one? Book a free call and we'll guide you.",
+    points: [
+      "Compare Launchpad, Growth Engine, and Full Stack AI",
+      "Transparent one-time and monthly pricing",
+      "No hidden fees, no surprises"
+    ],
+    cta: { text: "View Pricing →", to: "#pricing" }
   },
   {
-    title: "We build. You watch.",
+    title: "Fill the Questionnaire",
+    desc: "Tell us everything about your business — your brand, your goals, your audience. Upload your logo, pick your style, and choose your features.",
+    points: [
+      "5-step guided questionnaire",
+      "Upload your logo and brand assets",
+      "Choose add-ons like AI Chatbot and Voice AI Receptionist"
+    ],
+    cta: { text: "See what we ask →", to: "/questionnaire" }
+  },
+  {
+    title: "We Build. You Watch.",
     desc: "Average delivery is 2 to 4 weeks. You get progress updates, not silence. You approve before anything goes live.",
-    points: ["Weekly updates", "Iterative feedback", "Approval-based flow"]
+    points: [
+      "Weekly progress updates",
+      "Iterative feedback rounds",
+      "Nothing goes live without your approval"
+    ]
   },
   {
-    title: "You grow. We manage.",
-    desc: "Monthly reports included. We monitor, update, and optimize your system every month after launch.",
-    points: ["Performance reports", "System monitoring", "Continuous optimization"]
+    title: "You Grow. We Manage.",
+    desc: "Monthly reports included. We monitor, update, and optimize your system every month after launch so you never fall behind.",
+    points: [
+      "Monthly performance reports",
+      "System monitoring and updates",
+      "Continuous optimization"
+    ]
   }
 ];
 
@@ -50,6 +74,24 @@ export const ProcessSection = () => {
                   </li>
                 ))}
               </ul>
+
+              {step.cta && (
+                step.cta.to.startsWith('/') ? (
+                  <Link 
+                    to={step.cta.to} 
+                    className="inline-block mt-6 text-sm font-medium text-primary hover:text-primary/80 transition-colors border-b border-primary/30 hover:border-primary pb-0.5"
+                  >
+                    {step.cta.text}
+                  </Link>
+                ) : (
+                  <a 
+                    href={step.cta.to} 
+                    className="inline-block mt-6 text-sm font-medium text-primary hover:text-primary/80 transition-colors border-b border-primary/30 hover:border-primary pb-0.5"
+                  >
+                    {step.cta.text}
+                  </a>
+                )
+              )}
             </div>
           </div>
         ))}

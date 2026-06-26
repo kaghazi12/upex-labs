@@ -90,13 +90,16 @@ export const Footer = () => {
     </footer>
   );
 };
-
 export const MobileStickyBar = () => {
   return (
-    <div className="fixed bottom-0 left-0 w-full h-[52px] bg-primary z-[1050] shadow-[0_-4px_15px_rgba(0,0,0,0.3)] block md:hidden">
+    <div >
+      {/*
+      className="fixed bottom-0 left-0 w-full h-[52px] bg-primary z-[1050] shadow-[0_-4px_15px_rgba(0,0,0,0.3)] block md:hidden">
       <a href="/#contact" className="w-full h-full flex items-center justify-center text-primary-foreground no-underline text-[15px] font-bold uppercase tracking-[0.08em] text-center min-h-[44px]">
         Book a free call
       </a>
+      */}
     </div>
   );
+
 };

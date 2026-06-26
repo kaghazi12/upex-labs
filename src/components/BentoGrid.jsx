@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BentoCard } from './BentoCard';
 import { MessageSquare, Calendar, Globe, Mic, ArrowRight } from 'lucide-react';
 import { useCountUp } from '@/hooks/useCountUp';
+import { useChat } from '../context/ChatContext';
 
 const ChatPreview = () => {
   const [stage, setStage] = useState(0);
@@ -90,6 +91,7 @@ const CalendarPreview = () => {
 
 export const BentoGrid = () => {
   const { count, ref } = useCountUp(43, 2000, '%');
+  const { setIsChatOpen } = useChat();
 
   return (
     <section className="py-[60px] md:py-[100px] px-6 max-w-[1200px] mx-auto relative z-10" id="services">
@@ -141,7 +143,7 @@ export const BentoGrid = () => {
         </BentoCard>
         
         {/* Card 2 */}
-        <BentoCard delay={80} className="group-hover:trigger-chat">
+        <BentoCard delay={80} className="group-hover:trigger-chat" onClick={() => setIsChatOpen(true)}>
           <div>
             <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 text-primary transition-all duration-300 group-hover:bg-primary/20 group-hover:border-primary group-hover:rotate-6 group-hover:scale-105">
               <MessageSquare size={24} />

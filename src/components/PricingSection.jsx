@@ -110,10 +110,10 @@ export const PricingSection = () => {
           btnStyle="cta"
           features={[
             "Everything in Launchpad",
-            "AI chat widget trained on your business",
+            "Personalised AI chat widget",
             "Automated booking system",
             "Review request automation",
-            "Advanced SEO with monthly reporting",
+            "Advanced SEO",
             "2 newsletters per month"
           ]}
         />
