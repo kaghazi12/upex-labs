@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 export const BentoCard = ({ 
@@ -6,7 +7,8 @@ export const BentoCard = ({
   className, 
   colSpan2 = false, 
   tall = false, 
-  delay = 0 
+  delay = 0,
+  to = null
 }) => {
   const cardRef = useRef(null);
   const [style, setStyle] = useState({});
@@ -35,20 +37,16 @@ export const BentoCard = ({
     });
   };
 
-  return (
-    <div 
-      ref={cardRef}
-      className={cn(
-        "bg-card border border-border card-hover reveal flex flex-col justify-between cursor-default min-h-[220px] md:min-h-[250px] relative overflow-hidden group rounded-[20px] p-10 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]",
-        colSpan2 ? "md:col-span-2 w-full" : "w-full",
-        tall && "md:min-h-[380px]",
-        className
-      )}
-      style={{ transitionDelay: `${delay}ms`, ...style }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      {/* Spotlight effect via after pseudo element logic moved to inline styles or CSS class */}
+  const containerClasses = cn(
+    "bg-card border border-border card-hover reveal flex flex-col justify-between min-h-[220px] md:min-h-[250px] relative overflow-hidden group rounded-[20px] p-10 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)]",
+    colSpan2 ? "md:col-span-2 w-full" : "w-full",
+    tall && "md:min-h-[380px]",
+    to ? "cursor-pointer hover:border-primary hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)] transition-all duration-300" : "cursor-default",
+    className
+  );
+
+  const content = (
+    <>
       <div 
         className="absolute inset-0 rounded-[inherit] pointer-events-none z-[1] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
@@ -58,6 +56,33 @@ export const BentoCard = ({
       <div className="relative z-[2] h-full flex flex-col justify-between">
         {children}
       </div>
+    </>
+  );
+
+  if (to) {
+    return (
+      <Link 
+        to={to}
+        ref={cardRef}
+        className={containerClasses}
+        style={{ transitionDelay: `${delay}ms`, ...style }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <div 
+      ref={cardRef}
+      className={containerClasses}
+      style={{ transitionDelay: `${delay}ms`, ...style }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      {content}
     </div>
   );
 };

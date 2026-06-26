@@ -4,7 +4,8 @@ import { Ticker } from '../components/Ticker';
 import { BentoGrid } from '../components/BentoGrid';
 import { ProcessSection } from '../components/ProcessSection';
 import { PricingSection } from '../components/PricingSection';
-import { ResultsSection } from '../components/ResultsSection';
+import { DemoProjectsSection } from '../components/DemoProjectsSection';
+import { PrivacyPolicySection } from '../components/PrivacyPolicySection';
 import { FaqSection } from '../components/FaqSection';
 import { FinalCta } from '../components/FinalCta';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
@@ -20,7 +21,8 @@ export const HomePage = () => {
       <BentoGrid />
       <ProcessSection />
       <PricingSection />
-      <ResultsSection />
+      <DemoProjectsSection />
+      <PrivacyPolicySection />
       <FaqSection />
       <FinalCta />
     </>

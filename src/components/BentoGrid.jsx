@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BentoCard } from './BentoCard';
-import { MessageSquare, Calendar, Globe, Mic } from 'lucide-react';
+import { MessageSquare, Calendar, Globe, Mic, ArrowRight } from 'lucide-react';
 import { useCountUp } from '@/hooks/useCountUp';
 
 const ChatPreview = () => {
@@ -153,13 +153,16 @@ export const BentoGrid = () => {
         </BentoCard>
 
         {/* Card 3 */}
-        <BentoCard delay={160}>
+        <BentoCard delay={160} to="/booking-preview">
           <div>
             <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 text-primary transition-all duration-300 group-hover:bg-primary/20 group-hover:border-primary group-hover:rotate-6 group-hover:scale-105">
               <Calendar size={24} />
             </div>
             <h3 className="text-2xl font-bold mb-4 text-foreground tracking-tight">Bookings on autopilot.</h3>
-            <p className="text-base leading-[1.6] text-muted-foreground font-light">Automated calendar integration means clients book themselves. No phone tag, no lost appointments.</p>
+            <p className="text-base leading-[1.6] text-muted-foreground font-light mb-6">Automated calendar integration means clients book themselves. No phone tag, no lost appointments.</p>
+            <div className="text-primary font-medium flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+              See how it works <ArrowRight size={16} />
+            </div>
           </div>
           <CalendarPreview />
         </BentoCard>

@@ -1,0 +1,65 @@
+{
+  "plan": {
+    "name": "Growth Engine",
+    "setupPrice": "$3,500",
+    "retainerPrice": "$499"
+  },
+  "businessName": "a",
+  "industry": "a",
+  "businessDescription": "a",
+  "targetAudience": "a",
+  "websiteGoals": [
+    "Generate leads"
+  ],
+  "websiteGoalOther": "",
+  "brandColors": [
+    "#6366f1",
+    "#ffffff",
+    "#0f172a"
+  ],
+  "designStyle": "Playful & Creative",
+  "referenceWebsites": [],
+  "logoFile": null,
+  "numberOfPages": 5,
+  "pageNames": [
+    "Home",
+    "About",
+    "Services",
+    "Contact"
+  ],
+  "hasExistingContent": false,
+  "contentFile": null,
+  "needsBlog": false,
+  "needsEcommerce": false,
+  "wantsAIChatbot": false,
+  "wantsVoiceAI": false,
+  "wantsContactForm": true,
+  "wantsBookingSystem": false,
+  "wantsSocialLinks": false,
+  "socialLinks": null,
+  "wantsAnalytics": false,
+  "otherRequests": "",
+  "addons": {
+    "chatWidgetOnWebsite": false,
+    "trainOnCustomDocs": false,
+    "voiceAIBasic": false,
+    "voiceAIPro": false
+  },
+  "activeAddons": [],
+  "desiredLaunchDate": "",
+  "budgetFlexibility": "fixed",
+  "howDidYouHear": "",
+  "additionalNotes": "",
+  "totals": {
+    "baseSetup": 3500,
+    "baseMonthly": 499,
+    "addonsOneTime": 0,
+    "addonsMonthly": 0,
+    "totalOneTime": 3500,
+    "totalMonthly": 499
+  },
+  "timestamp": "2026-06-26T14:53:02.925Z",
+  "submissionId": "sub_1782485582941_nx6bsx",
+  "submittedAt": "2026-06-26T14:53:02.941Z",
+  "filename": "submission_1782485582941_a.json"
+}

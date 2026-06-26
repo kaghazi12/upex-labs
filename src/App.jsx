@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
+import { QuestionnaireProvider } from './context/QuestionnaireContext';
 import { Navbar } from './components/Navbar';
 import { Footer, MobileStickyBar } from './components/Footer';
 import { CosmicBackground } from './components/CosmicBackground';
 import { HomePage } from './pages/HomePage';
+import { QuestionnairePage } from './pages/QuestionnairePage';
 import { CheckoutPage } from './pages/CheckoutPage';
+import { BookingPreviewPage } from './pages/BookingPreviewPage';
 
 // Component to handle scrolling to hash links on route change
 const ScrollToHash = () => {
@@ -28,21 +31,25 @@ const ScrollToHash = () => {
 const App = () => {
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <ScrollToHash />
-        <CosmicBackground />
-        <div className="relative z-10 flex flex-col min-h-screen">
-          <Navbar />
-          <div className="flex-grow">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/checkout" element={<CheckoutPage />} />
-            </Routes>
+      <QuestionnaireProvider>
+        <BrowserRouter>
+          <ScrollToHash />
+          <CosmicBackground />
+          <div className="relative z-10 flex flex-col min-h-screen">
+            <Navbar />
+            <div className="flex-grow">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/questionnaire" element={<QuestionnairePage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/booking-preview" element={<BookingPreviewPage />} />
+              </Routes>
+            </div>
+            <Footer />
+            <MobileStickyBar />
           </div>
-          <Footer />
-          <MobileStickyBar />
-        </div>
-      </BrowserRouter>
+        </BrowserRouter>
+      </QuestionnaireProvider>
     </ThemeProvider>
   );
 };

@@ -1,0 +1,76 @@
+{
+  "plan": {
+    "name": "Growth Engine",
+    "setupPrice": "$3,500",
+    "retainerPrice": "$499"
+  },
+  "businessName": "a",
+  "industry": "a",
+  "businessDescription": "a",
+  "targetAudience": "a",
+  "websiteGoals": [
+    "Generate leads",
+    "Build brand awareness"
+  ],
+  "websiteGoalOther": "",
+  "brandColors": [
+    "#6366f1",
+    "#ffffff",
+    "#0f172a"
+  ],
+  "designStyle": "Elegant & Luxury",
+  "referenceWebsites": [
+    "abc",
+    "c"
+  ],
+  "logoFile": null,
+  "numberOfPages": 5,
+  "pageNames": [
+    "Home",
+    "About",
+    "Services",
+    "Contact"
+  ],
+  "hasExistingContent": false,
+  "contentFile": null,
+  "needsBlog": false,
+  "needsEcommerce": true,
+  "wantsAIChatbot": false,
+  "wantsVoiceAI": false,
+  "wantsContactForm": true,
+  "wantsBookingSystem": false,
+  "wantsSocialLinks": false,
+  "socialLinks": null,
+  "wantsAnalytics": false,
+  "otherRequests": "",
+  "addons": {
+    "chatWidgetOnWebsite": false,
+    "trainOnCustomDocs": false,
+    "voiceAIBasic": true,
+    "voiceAIPro": false
+  },
+  "activeAddons": [
+    {
+      "key": "voiceAIBasic",
+      "label": "Basic Voice AI (100 mins/mo)",
+      "monthly": 200,
+      "oneTime": 0
+    }
+  ],
+  "desiredLaunchDate": "",
+  "budgetFlexibility": "fixed",
+  "howDidYouHear": "",
+  "additionalNotes": "",
+  "totals": {
+    "baseSetup": 3500,
+    "baseMonthly": 499,
+    "addonsOneTime": 0,
+    "addonsMonthly": 200,
+    "totalOneTime": 3500,
+    "totalMonthly": 699
+  },
+  "timestamp": "2026-06-26T14:46:05.133Z",
+  "submissionId": "sub_1782485165200_m4vtvw",
+  "submittedAt": "2026-06-26T14:46:05.200Z",
+  "filename": "submission_1782485165200_a.json"
+}

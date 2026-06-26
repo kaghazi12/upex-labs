@@ -11,8 +11,16 @@ export const PricingCard = ({
   isFeatured = false, 
   delay = 0,
   btnText = "Get started",
-  btnStyle = "outlined"
+  btnStyle = "outlined",
+  linkTo,
 }) => {
+  // Default link: questionnaire with plan info. Override with linkTo prop.
+  const href = linkTo || `/questionnaire?plan=${encodeURIComponent(title)}&setup=${encodeURIComponent(setupPrice)}&retainer=${encodeURIComponent(retainerPrice)}`;
+  const isExternal = href.startsWith('#');
+
+  const ButtonTag = isExternal ? 'a' : Link;
+  const buttonProps = isExternal ? { href } : { to: href };
+
   return (
     <div 
       className={cn(
@@ -55,13 +63,13 @@ export const PricingCard = ({
       </div>
       
       {btnStyle === 'outlined' ? (
-        <Link to={`/checkout?plan=${encodeURIComponent(title)}&setup=${encodeURIComponent(setupPrice)}&retainer=${encodeURIComponent(retainerPrice)}`} className="w-full block bg-transparent text-foreground border border-foreground/30 py-3.5 px-6 rounded-lg text-sm font-semibold text-center cursor-pointer transition-all duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground shadow-none hover:shadow-md hover:-translate-y-0.5">
+        <ButtonTag {...buttonProps} className="w-full block bg-transparent text-foreground border border-foreground/30 py-3.5 px-6 rounded-lg text-sm font-semibold text-center cursor-pointer transition-all duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground shadow-none hover:shadow-md hover:-translate-y-0.5">
           {btnText}
-        </Link>
+        </ButtonTag>
       ) : (
-        <Link to={`/checkout?plan=${encodeURIComponent(title)}&setup=${encodeURIComponent(setupPrice)}&retainer=${encodeURIComponent(retainerPrice)}`} className="w-full text-center bg-primary text-primary-foreground px-6 py-3.5 rounded-lg text-sm font-semibold border border-white/10 relative overflow-hidden inline-block cursor-pointer transition-all duration-300 shadow-md hover:brightness-110 hover:shadow-lg hover:-translate-y-[2px]">
+        <ButtonTag {...buttonProps} className="w-full text-center bg-primary text-primary-foreground px-6 py-3.5 rounded-lg text-sm font-semibold border border-white/10 relative overflow-hidden inline-block cursor-pointer transition-all duration-300 shadow-md hover:brightness-110 hover:shadow-lg hover:-translate-y-[2px]">
           {btnText}
-        </Link>
+        </ButtonTag>
       )}
     </div>
   );
@@ -116,6 +124,7 @@ export const PricingSection = () => {
           retainerPrice="$999"
           delay={160}
           btnText="Book a strategy call"
+          linkTo="#contact"
           features={[
             "Everything in Growth Engine",
             "Full sales funnel with lead magnet",
