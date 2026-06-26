@@ -10,6 +10,7 @@ const DEMO_PROJECTS = [
     industry: 'LOCAL BUSINESS',
     features: ['Online booking system', 'Google Business setup', 'Lead capture form'],
     description: 'A complete digital presence for a local barbershop including automated booking integration that syncs with their calendar, reducing phone calls and missed appointments. We also optimized their Google Business Profile for local SEO.',
+    demoUrl: '#', /* ADD TRIMBOX DEMO URL HERE */
   },
   {
     id: 'nexlaw',
@@ -17,6 +18,7 @@ const DEMO_PROJECTS = [
     industry: 'LAW FIRM',
     features: ['AI chat receptionist', 'Case inquiry form', 'Mobile optimized site'],
     description: 'A highly professional, fast-loading website for a legal practice. We integrated a custom-trained AI receptionist to qualify leads 24/7, answering basic legal queries and routing high-value cases to the attorneys instantly.',
+    demoUrl: '#', /* ADD NEXLAW DEMO URL HERE */
   },
   {
     id: 'puresmile',
@@ -24,6 +26,7 @@ const DEMO_PROJECTS = [
     industry: 'DENTAL CLINIC',
     features: ['Voice AI receptionist', 'Appointment automation', 'Review request system'],
     description: 'A comprehensive patient acquisition engine. Features include a Voice AI that handles overflow inbound calls, fully automated appointment scheduling, and an automated SMS system requesting reviews from happy patients post-visit.',
+    demoUrl: '#', /* ADD PURESMILE DEMO URL HERE */
   }
 ];
 
@@ -108,7 +111,7 @@ export const DemoProjectsSection = () => {
                   onClick={() => setActiveModal(project)}
                   className="text-primary font-medium flex items-center gap-2 group/btn hover:text-primary/80 transition-colors w-fit"
                 >
-                  View Demo <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                  View Demo Site <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
@@ -164,16 +167,19 @@ export const DemoProjectsSection = () => {
                 </p>
               </div>
 
-              <div className="flex justify-end pt-6 border-t border-border group/visit relative">
-                <button 
-                  disabled
-                  className="cosmic-button px-6 py-3 rounded-lg font-semibold flex items-center gap-2 opacity-50 cursor-not-allowed"
+              <div className="flex flex-col items-end pt-6 border-t border-border">
+                <a 
+                  href={activeModal.demoUrl || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cosmic-button px-6 py-3 rounded-lg font-semibold flex items-center gap-2 mb-3 w-fit"
                 >
-                  Visit Site <ExternalLink size={16} />
-                </button>
-                <div className="absolute bottom-full right-0 mb-2 whitespace-nowrap bg-foreground text-background text-xs px-3 py-1.5 rounded opacity-0 group-hover/visit:opacity-100 transition-opacity pointer-events-none">
-                  Client site — not publicly listed
-                </div>
+                  View Our Demo <ArrowRight size={16} />
+                </a>
+                <p className="text-xs text-muted-foreground/80 italic text-right max-w-sm">
+                  ⚠️ Due to client privacy, we don't publicly share client websites. 
+                  This is a demo site built by UPEX LABS to showcase what we can build for you.
+                </p>
               </div>
             </div>
           </div>

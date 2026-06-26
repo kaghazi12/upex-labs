@@ -24,7 +24,7 @@ export const PrivacyPolicySection = () => {
           <div className="mb-10">
             <h3 className="text-xl font-bold text-foreground mb-4">1. Introduction</h3>
             <p className="leading-relaxed">
-              UPEX LABS ("we", "us", "our") is committed to protecting your personal information. 
+              UPEX LABS is committed to protecting your personal information. 
               This Privacy Policy explains how we collect, use, and safeguard your data when you 
               use our website and services.
             </p>
