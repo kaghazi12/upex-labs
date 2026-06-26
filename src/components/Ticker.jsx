@@ -15,12 +15,11 @@ export const Ticker = () => {
     "Webflow",
     "Calendly",
     "GoHighLevel",
-    "OpenAI",
-    "Bland AI",
+    "AI Chatbot",
     "Mailchimp",
     "Stripe",
-    "Cal.com",
-    "Zapier"
+    "PostgreSQL",
+    "Mongodb"
   ];
 
   return (
