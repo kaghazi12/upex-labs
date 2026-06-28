@@ -58,21 +58,20 @@ export const Navbar = () => {
           <nav className="hidden md:flex items-center gap-8">
             <a href="/#services" className="text-foreground text-sm font-medium relative py-2 transition-all duration-300 hover:opacity-90 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">Services</a>
             <a href="/#how-it-works" className="text-foreground text-sm font-medium relative py-2 transition-all duration-300 hover:opacity-90 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">How it works</a>
+            <a href="/#pricing" className="text-foreground text-sm font-medium relative py-2 transition-all duration-300 hover:opacity-90 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">Pricing</a> 
             <a href="/#work" className="text-foreground text-sm font-medium relative py-2 transition-all duration-300 hover:opacity-90 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">Work</a>
             <a href="/#privacy" className="text-foreground text-sm font-medium relative py-2 transition-all duration-300 hover:opacity-90 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">Privacy</a>
-            <a href="/#pricing" className="text-foreground text-sm font-medium relative py-2 transition-all duration-300 hover:opacity-90 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">Pricing</a>
-            <a href="/#contact" className="text-foreground text-sm font-medium relative py-2 transition-all duration-300 hover:opacity-90 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">Contact</a>
           </nav>
           
           {/* Actions */}
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-            <a 
-              href="#contact" 
+            <Link 
+              to="/questionnaire" 
               className="cosmic-button"
             >
-              Book a free call
-            </a>
+              Start Your Project
+            </Link>
           </div>
 
           <div className="flex md:hidden items-center gap-4">
@@ -105,13 +104,12 @@ export const Navbar = () => {
         <nav className="flex flex-col items-center gap-10 w-full">
           <a href="/#services" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">Services</a>
           <a href="/#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">How it works</a>
+          <a href="/#pricing" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">Pricing</a>
           <a href="/#work" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">Work</a>
           <a href="/#privacy" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">Privacy</a>
-          <a href="/#pricing" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">Pricing</a>
-          <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className="text-foreground no-underline font-semibold tracking-tight transition-all duration-300 hover:text-primary">Contact</a>
-          <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="cosmic-button mt-6 py-4 px-10 w-[80%] max-w-[300px]">
-            Book a free call
-          </a>
+          <Link to="/questionnaire" onClick={() => setMobileMenuOpen(false)} className="cosmic-button mt-6 py-4 px-10 w-[80%] max-w-[300px]">
+            Start Your Project
+          </Link>
         </nav>
       </div>
     </>

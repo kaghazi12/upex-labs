@@ -124,7 +124,6 @@ export const PricingSection = () => {
           retainerPrice="$999"
           delay={160}
           btnText="Book a strategy call"
-          linkTo="#contact"
           features={[
             "Everything in Growth Engine",
             "Full sales funnel with lead magnet",
@@ -136,10 +135,11 @@ export const PricingSection = () => {
         />
         
       </div>
-      
+      {/*
       <div className="text-center text-muted-foreground text-sm font-light mt-14 leading-[1.5] w-full reveal">
         <p>All packages require a 6-month minimum retainer. Cancel anytime after that.</p>
       </div>
+      */}
     </section>
   );
 };

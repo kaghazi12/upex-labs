@@ -19,7 +19,7 @@ export const Footer = () => {
           />
           <span style={{ display: 'none' }} className="font-bold text-xl tracking-tight text-foreground mb-5">UPEX LABS</span>
           <p className="text-muted-foreground text-sm font-light leading-[1.5]">
-            AI-powered growth systems for US businesses.
+            AI-powered growth systems for businesses.
           </p>
         </div>
 
@@ -43,16 +43,16 @@ export const Footer = () => {
             <li><a href="/#how-it-works" className="text-muted-foreground text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-300 min-h-[44px] inline-flex items-center">How it works</a></li>
             <li><a href="/#pricing" className="text-muted-foreground text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-300 min-h-[44px] inline-flex items-center">Pricing</a></li>
             <li><a href="/#results" className="text-muted-foreground text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-300 min-h-[44px] inline-flex items-center">Results</a></li>
-            <li><a href="/#contact" className="text-muted-foreground text-sm font-medium hover:text-primary hover:translate-x-1 transition-all duration-300 min-h-[44px] inline-flex items-center">Contact</a></li>
           </ul>
         </div>
 
         {/* Col 4 */}
         <div className="flex flex-col">
           <h5 className="text-foreground text-[15px] font-bold mb-6 uppercase tracking-[0.08em]">Get in touch</h5>
-          <a href="mailto:hello@upexlabs.com" className="text-foreground text-[15px] font-semibold hover:text-primary transition-all duration-300 min-h-[44px] inline-flex items-center mb-4">
-            hello@upexlabs.com
+          <a href="mailto:upexlabs@gmail.com" className="pl-17 text-foreground text-[15px] font-semibold hover:text-primary transition-all duration-300 min-h-[44px] inline-flex items-center mb-4">
+            upexlabs@gmail.com
           </a>
+           {/* 
           <div className="flex gap-4 mt-2">
             <a href="#" aria-label="LinkedIn" className="text-foreground w-11 h-11 flex items-center justify-center rounded-lg bg-card border border-border transition-all duration-300 hover:text-primary-foreground hover:bg-primary hover:border-primary hover:-translate-y-[3px]">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -61,6 +61,7 @@ export const Footer = () => {
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </a>
+            
             <a href="#" aria-label="Instagram" className="text-foreground w-11 h-11 flex items-center justify-center rounded-lg bg-card border border-border transition-all duration-300 hover:text-primary-foreground hover:bg-primary hover:border-primary hover:-translate-y-[3px]">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -75,16 +76,17 @@ export const Footer = () => {
               </svg>
             </a>
           </div>
+          */}
         </div>
         
       </div>
 
       <div className="border-t border-border pt-8 mt-16 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
         <p className="text-muted-foreground text-xs font-light m-0">
-          Upex Labs. Built for US businesses, powered by AI.
+          Upex Labs. Built for businesses, powered by AI.
         </p>
         <p className="text-muted-foreground text-xs font-light m-0">
-          &copy; 2025 Upex Labs. All rights reserved.
+          &copy; 2026 Upex Labs. All rights reserved.
         </p>
       </div>
     </footer>

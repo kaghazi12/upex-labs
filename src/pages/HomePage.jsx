@@ -7,7 +7,6 @@ import { PricingSection } from '../components/PricingSection';
 import { DemoProjectsSection } from '../components/DemoProjectsSection';
 import { PrivacyPolicySection } from '../components/PrivacyPolicySection';
 import { FaqSection } from '../components/FaqSection';
-import { FinalCta } from '../components/FinalCta';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export const HomePage = () => {
@@ -24,7 +23,6 @@ export const HomePage = () => {
       <DemoProjectsSection />
       <PrivacyPolicySection />
       <FaqSection />
-      <FinalCta />
     </>
   );
 };

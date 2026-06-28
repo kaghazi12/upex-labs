@@ -11,20 +11,23 @@ export const Hero = () => {
             Your competitors are booking leads at 2am. Are you?
           </h1>
           <p className="reveal delay-150 text-[clamp(16px,2.5vw,20px)] font-light text-muted-foreground max-w-[560px] leading-[1.6] mb-10 opacity-80">
-            Upex Labs builds AI-powered websites, automation systems, and lead machines for US businesses that refuse to stay small.
+            Upex Labs builds AI-powered websites, automation systems, and lead machines for businesses that refuse to stay small.
           </p>
           
           <div className="reveal delay-300 flex flex-col md:flex-row gap-5 items-center w-full max-w-[300px] md:max-w-none mx-auto lg:mx-0 mb-8">
             <a href="#pricing" className="w-full md:w-auto text-center cosmic-button">
               See our packages
             </a>
+            {/*
             <a href="#contact" className="w-full md:w-auto text-center bg-transparent text-foreground px-6 py-2 rounded-full font-semibold border border-border cursor-pointer inline-block transition-all duration-300 hover:bg-card hover:border-primary/50 hover:-translate-y-[2px]">
               Book a call
             </a>
+            */}
           </div>
           
           <div className="reveal delay-300 flex justify-center lg:justify-start items-center gap-3 text-[13px] text-muted-foreground flex-wrap opacity-70">
-            <span className="flex items-center after:content-['•'] after:ml-3 after:opacity-50">US-focused clients</span>
+            {/* <span className="flex items-center after:content-['•'] after:ml-3 after:opacity-50">US-focused clients</span>
+            */}
             <span className="flex items-center after:content-['•'] after:ml-3 after:opacity-50">Fully managed</span>
             <span className="flex items-center">Results in 30 days</span>
           </div>

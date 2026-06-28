@@ -51,16 +51,8 @@ export const FaqSection = () => {
 
   const faqs = [
     {
-      q: "Where is Upex Labs based and does that affect quality?",
-      a: "We operate remotely and serve US clients full time. Our team works on US business hours overlap and you get a dedicated point of contact. Location has never been a concern for any of our clients."
-    },
-    {
       q: "How long does setup actually take?",
-      a: "Most projects go live in 2 to 4 weeks from the discovery call. Full Stack AI projects can take up to 6 weeks depending on integrations."
-    },
-    {
-      q: "What if I want to cancel?",
-      a: "All retainers require a 6-month minimum commitment. After that you can cancel with 30 days notice. We keep it simple."
+      a: "Most projects go live in 1 to 3 weeks. Full Stack AI projects can take up to 4 weeks depending on integrations."
     },
     {
       q: "Do I need any technical knowledge?",
@@ -72,7 +64,7 @@ export const FaqSection = () => {
     },
     {
       q: "What types of businesses do you work best with?",
-      a: "US-based local service businesses with real revenue and no real digital infrastructure. Dentists, contractors, law firms, med spas, real estate agents. If you have a phone and clients, we can build a system around it."
+      a: "Local service businesses with real revenue and no real digital infrastructure. Dentists, contractors, law firms, med spas, real estate agents. If you have a phone and clients, we can build a system around it."
     }
   ];
 

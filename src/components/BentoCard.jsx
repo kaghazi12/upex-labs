@@ -2,11 +2,11 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
-export const BentoCard = ({ 
-  children, 
-  className, 
-  colSpan2 = false, 
-  tall = false, 
+export const BentoCard = ({
+  children,
+  className,
+  colSpan2 = false,
+  tall = false,
   delay = 0,
   to = null,
   onClick = null
@@ -48,7 +48,7 @@ export const BentoCard = ({
 
   const content = (
     <>
-      <div 
+      <div
         className="absolute inset-0 rounded-[inherit] pointer-events-none z-[1] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
           background: `radial-gradient(circle 240px at var(--mx, 50%) var(--my, 50%), hsl(var(--primary) / 0.1), transparent 70%)`
@@ -62,7 +62,7 @@ export const BentoCard = ({
 
   if (to) {
     return (
-      <Link 
+      <Link
         to={to}
         ref={cardRef}
         className={containerClasses}
@@ -76,7 +76,7 @@ export const BentoCard = ({
   }
 
   return (
-    <div 
+    <div
       ref={cardRef}
       className={containerClasses}
       style={{ transitionDelay: `${delay}ms`, ...style }}

@@ -11,13 +11,15 @@ const TickerItem = ({ text }) => (
 
 export const Ticker = () => {
   const items = [
-    "Google Business",
+    "React.js",
+    "Next.js",
+    "Tailwind css",
+    "Node.js",
+    "Express.js",
     "Webflow",
     "Calendly",
-    "GoHighLevel",
     "AI Chatbot",
     "Mailchimp",
-    "Stripe",
     "PostgreSQL",
     "Mongodb"
   ];
