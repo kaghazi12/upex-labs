@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:3001/api/wise';
+const API_BASE = `${import.meta.env.VITE_API_URL}/api/wise`;
 
 export const WiseCheckoutForm = ({ planName, price, onSuccessfulPayment }) => {
   const [step, setStep] = useState(1); // 1: Quote, 2: Recipient, 3: Transfer & Fund
