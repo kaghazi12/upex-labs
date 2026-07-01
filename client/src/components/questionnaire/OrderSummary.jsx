@@ -18,19 +18,17 @@ export const OrderSummary = () => {
         <span className="text-sm text-foreground font-medium">{data.plan.name} Plan</span>
         <div className="text-right">
           <span className="text-sm font-semibold text-foreground">{data.plan.setupPrice}</span>
-          <span className="text-xs text-muted-foreground block">{data.plan.retainerPrice}/mo</span>
         </div>
       </div>
 
       {/* Add-ons */}
       {activeAddons.length > 0 && (
         <div className="mt-2">
-          {activeAddons.map(({ key, label, monthly, oneTime }) => (
+          {activeAddons.map(({ key, label, oneTime }) => (
             <div key={key} className="flex justify-between items-center py-1.5">
               <span className="text-xs text-muted-foreground">+ {label}</span>
               <span className="text-xs font-medium text-primary">
                 {oneTime > 0 && `$${oneTime}`}
-                {monthly > 0 && `$${monthly}/mo`}
               </span>
             </div>
           ))}
@@ -40,12 +38,8 @@ export const OrderSummary = () => {
       {/* Totals */}
       <div className="mt-3 pt-3 border-t border-border">
         <div className="flex justify-between items-center">
-          <span className="text-xs font-medium text-muted-foreground">Total One-Time</span>
+          <span className="text-xs font-medium text-muted-foreground">Total</span>
           <span className="text-base font-bold text-foreground">${totals.totalOneTime.toLocaleString()}</span>
-        </div>
-        <div className="flex justify-between items-center mt-1">
-          <span className="text-xs font-medium text-muted-foreground">Total Monthly</span>
-          <span className="text-base font-bold text-primary">${totals.totalMonthly.toLocaleString()}/mo</span>
         </div>
       </div>
     </div>

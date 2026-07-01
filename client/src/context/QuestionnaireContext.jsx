@@ -12,7 +12,7 @@ export const useQuestionnaire = () => {
 
 const initialData = {
   // Plan info (set when user clicks "Get Started")
-  plan: { name: '', setupPrice: '', retainerPrice: '' },
+  plan: { name: '', setupPrice: '' },
 
   // Submission tracking
   submissionId: null,
@@ -52,10 +52,10 @@ const initialData = {
 
   // Add-ons
   addons: {
-    chatWidgetOnWebsite: false,    // +$200/mo
-    trainOnCustomDocs: false,      // +$150 one-time
-    voiceAIBasic: false,           // +$200/mo (100 mins)
-    voiceAIPro: false,             // +$400/mo (500 mins)
+    chatWidgetOnWebsite: false,
+    trainOnCustomDocs: false,
+    voiceAIBasic: false,
+    voiceAIPro: false,
   },
 
   // Step 5 — Timeline & Final Details
@@ -67,10 +67,10 @@ const initialData = {
 
 // Add-on pricing constants — exported for use in components
 export const ADDON_PRICING = {
-  chatWidgetOnWebsite: { label: 'Chat Widget on Website', monthly: 200, oneTime: 0 },
-  trainOnCustomDocs: { label: 'Train on Custom Docs/FAQs', monthly: 0, oneTime: 150 },
-  voiceAIBasic: { label: 'Basic Voice AI (100 mins/mo)', monthly: 200, oneTime: 0 },
-  voiceAIPro: { label: 'Pro Voice AI (500 mins/mo)', monthly: 400, oneTime: 0 },
+  chatWidgetOnWebsite: { label: 'Chat Widget on Website', oneTime: 0 },
+  trainOnCustomDocs: { label: 'Train on Custom Docs/FAQs', oneTime: 150 },
+  voiceAIBasic: { label: 'Basic Voice AI (100 mins)', oneTime: 0 },
+  voiceAIPro: { label: 'Pro Voice AI (500 mins)', oneTime: 0 },
 };
 
 // Helper: parse "$1,500" → 1500
@@ -82,25 +82,19 @@ export const parsePriceToNumber = (priceStr) => {
 // Helper: compute totals from data
 export const computeTotals = (data) => {
   const baseSetup = parsePriceToNumber(data.plan.setupPrice);
-  const baseMonthly = parsePriceToNumber(data.plan.retainerPrice);
 
   let addonsOneTime = 0;
-  let addonsMonthly = 0;
 
   Object.entries(data.addons).forEach(([key, enabled]) => {
     if (enabled && ADDON_PRICING[key]) {
       addonsOneTime += ADDON_PRICING[key].oneTime;
-      addonsMonthly += ADDON_PRICING[key].monthly;
     }
   });
 
   return {
     baseSetup,
-    baseMonthly,
     addonsOneTime,
-    addonsMonthly,
     totalOneTime: baseSetup + addonsOneTime,
-    totalMonthly: baseMonthly + addonsMonthly,
   };
 };
 

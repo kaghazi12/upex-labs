@@ -15,7 +15,7 @@ export const StepFeaturesIntegrations = ({ onNext, onBack }) => {
   const { data, updateData, updateAddon } = useQuestionnaire();
 
   const planName = data.plan.name;
-  const showAIOptions = planName === 'Growth Engine' || planName === 'Full Stack AI';
+  const showAIOptions = planName === 'Growth Engine' || planName === 'Custom';
 
   const updateSocialLink = (platform, value) => {
     updateData({ socialLinks: { ...data.socialLinks, [platform]: value } });
@@ -61,7 +61,7 @@ export const StepFeaturesIntegrations = ({ onNext, onBack }) => {
 
   return (
     <div className="flex flex-col gap-4 animate-fade-in">
-      {/* AI Chatbot — only for Growth Engine / Full Stack AI */}
+      {/* AI Chatbot — only for Growth Engine / Custom */}
       {showAIOptions && (
         <>
           <div className={`p-4 rounded-lg border transition-all duration-200 flex items-center justify-between ${

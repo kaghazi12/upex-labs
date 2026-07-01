@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { WiseCheckoutForm } from './WiseCheckoutForm';
 import { CheckCircle2 } from 'lucide-react';
 
-export const PaymentSection = ({ selectedPlan = 'Growth Engine', setupPrice = '$3,500', retainerPrice = '$499' }) => {
+export const PaymentSection = ({ selectedPlan = 'Growth Engine', setupPrice = '$999' }) => {
   const [paymentStatus, setPaymentStatus] = useState('idle'); // 'idle', 'success'
 
   const handleSuccess = () => {
@@ -32,12 +32,8 @@ export const PaymentSection = ({ selectedPlan = 'Growth Engine', setupPrice = '$
         <h2 className="text-2xl font-bold text-foreground mb-4">Checkout</h2>
         <div className="flex flex-col gap-2 border-b border-border pb-4">
           <div className="flex justify-between items-center text-muted-foreground">
-            <span>{selectedPlan} Plan — Setup Fee</span>
+            <span>{selectedPlan} Plan</span>
             <span className="font-semibold text-foreground text-xl">{setupPrice}</span>
-          </div>
-          <div className="flex justify-between items-center text-muted-foreground text-sm">
-            <span>Monthly Retainer</span>
-            <span className="font-medium text-foreground">{retainerPrice}/mo</span>
           </div>
         </div>
       </div>

@@ -6,16 +6,17 @@ import { Link } from 'react-router-dom';
 export const PricingCard = ({ 
   title, 
   setupPrice, 
-  retainerPrice, 
   features, 
-  isFeatured = false, 
+  isFeatured = false,
+  isCustom = false, 
   delay = 0,
   btnText = "Get started",
   btnStyle = "outlined",
   linkTo,
 }) => {
   // Default link: questionnaire with plan info. Override with linkTo prop.
-  const href = linkTo || `/questionnaire?plan=${encodeURIComponent(title)}&setup=${encodeURIComponent(setupPrice)}&retainer=${encodeURIComponent(retainerPrice)}`;
+  const safeSetupPrice = setupPrice || 'Custom';
+  const href = linkTo || `/questionnaire?plan=${encodeURIComponent(title)}&setup=${encodeURIComponent(safeSetupPrice)}`;
   const isExternal = href.startsWith('#');
 
   const ButtonTag = isExternal ? 'a' : Link;
@@ -40,12 +41,22 @@ export const PricingCard = ({
       <div className="flex flex-col">
         <h3 className="text-2xl font-bold text-foreground mb-6">{title}</h3>
         <div className="mb-8">
-          <div className="text-4xl font-extrabold text-foreground leading-[1.1]">
-            {setupPrice} <span className="text-sm font-normal text-muted-foreground">one-time</span>
-          </div>
-          <div className="text-base text-muted-foreground font-normal mt-1">
-            + {retainerPrice} per month
-          </div>
+          {isCustom ? (
+            <>
+              <div className="text-4xl font-extrabold text-foreground leading-[1.1]">
+                Custom Pricing
+              </div>
+              <div className="text-base text-muted-foreground font-normal mt-1">
+                Tailored to your project scope
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="text-4xl font-extrabold text-foreground leading-[1.1]">
+                {setupPrice} <span className="text-sm font-normal text-muted-foreground">one-time</span>
+              </div>
+            </>
+          )}
         </div>
         
         <hr className="h-[1px] bg-border my-6 border-none" />
@@ -81,20 +92,18 @@ export const PricingSection = () => {
       <header className="mb-12 text-center reveal">
         <span className="text-primary text-xs uppercase tracking-[0.1em] font-bold mb-2 block">Pricing</span>
         <h2 className="text-[clamp(28px,4.5vw,44px)] font-extrabold text-foreground leading-[1.15] mb-4">No hidden fees.</h2>
-        <p className="text-muted-foreground max-w-[500px] mx-auto text-base">We build your entire system and manage it for a flat monthly rate.</p>
+        <p className="text-muted-foreground max-w-[500px] mx-auto text-base">We build your entire system and manage it for a flat rate.</p>
       </header>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10 items-stretch w-full max-w-[500px] lg:max-w-none mx-auto">
         
         <PricingCard 
           title="Launchpad"
-          setupPrice="$1,500"
-          retainerPrice="$199"
+          setupPrice="$599"
           delay={0}
           features={[
             "5-page professional website",
             "Mobile optimized and fast loading",
-            "On-page SEO setup",
             "Google Business Profile setup",
             "Lead capture form",
             "30 days post-launch support"
@@ -103,8 +112,7 @@ export const PricingSection = () => {
         
         <PricingCard 
           title="Growth Engine"
-          setupPrice="$3,500"
-          retainerPrice="$499"
+          setupPrice="$999"
           isFeatured={true}
           delay={80}
           btnStyle="cta"
@@ -112,23 +120,19 @@ export const PricingSection = () => {
             "Everything in Launchpad",
             "Personalised AI chat widget",
             "Automated booking system",
-            "Review request automation",
-            "Advanced SEO",
-            "2 newsletters per month"
+            "Review request automation"
           ]}
         />
         
         <PricingCard 
-          title="Full Stack AI"
-          setupPrice="$7,500"
-          retainerPrice="$999"
+          title="Custom"
+          isCustom={true}
           delay={160}
-          btnText="Book a strategy call"
+          btnText="Let's Talk →"
           features={[
             "Everything in Growth Engine",
             "Full sales funnel with lead magnet",
             "AI voice receptionist",
-            "LLM and AI search optimization",
             "Motion animations on key sections",
             "CRM setup and integration"
           ]}

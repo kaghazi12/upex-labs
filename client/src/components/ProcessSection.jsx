@@ -6,7 +6,7 @@ const steps = [
     title: "Choose Your Plan",
     desc: "Explore our three plans and pick the one that fits your business goals. Not sure which one? Book a free call and we'll guide you.",
     points: [
-      "Compare Launchpad, Growth Engine, and Full Stack AI",
+      "Compare Launchpad, Growth Engine, and Custom plans",
       "Transparent one-time and monthly pricing",
       "No hidden fees, no surprises"
     ],

@@ -7,8 +7,7 @@ export const CheckoutPage = () => {
 
   // Read plan details from URL query params, with sensible defaults
   const selectedPlan = searchParams.get('plan') || 'Growth Engine';
-  const setupPrice = searchParams.get('setup') || '$3,500';
-  const retainerPrice = searchParams.get('retainer') || '$499';
+  const setupPrice = searchParams.get('setup') || '$999';
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-6 relative z-10 flex flex-col items-center">
@@ -22,7 +21,6 @@ export const CheckoutPage = () => {
       <PaymentSection 
         selectedPlan={selectedPlan} 
         setupPrice={setupPrice} 
-        retainerPrice={retainerPrice} 
       />
       
       <div className="mt-12 flex items-center justify-center gap-4 opacity-60">

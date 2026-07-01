@@ -52,7 +52,7 @@ export const FaqSection = () => {
   const faqs = [
     {
       q: "How long does setup actually take?",
-      a: "Most projects go live in 1 to 3 weeks. Full Stack AI projects can take up to 4 weeks depending on integrations."
+      a: "Most projects go live in 1 to 3 weeks. Custom projects can take up to 4 weeks depending on integrations."
     },
     {
       q: "Do I need any technical knowledge?",
